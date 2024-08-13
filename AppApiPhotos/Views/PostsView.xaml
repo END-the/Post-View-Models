@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppApiPhotos.Views.PostsView"
+             Title="PostsView">
+    
+        
+        
+    <ScrollView>
+
+       
+        <VerticalStackLayout>
+
+            <Button Command="{Binding getPostsCommand}"
+            Text="Carregar Postagens"/>
+
+            <CollectionView ItemsSource="{Binding Posts}"> <!-- lista de coisas + template-->
+                <CollectionView.ItemTemplate>
+                    <!--//template-->
+                    <DataTemplate>
+                        <!--//dados-->
+
+                        <VerticalStackLayout>
+                            <!--(cada elemento so pode ter 1 dentro, por isso usou o vertical stacke layout)-->
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding Title}"/>
+
+                            </HorizontalStackLayout>
+
+                            <Label Text="{Binding Body}" />
+
+                        </VerticalStackLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+        </VerticalStackLayout>
+        
+    </ScrollView>
+        
+    
+</ContentPage>
